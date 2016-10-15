@@ -2,13 +2,13 @@
   Test code to generate a human player and an orc player
  */
 var PlayerOne = new Gauntlet.Combatants.Human();
-PlayerOne.setWeapon(new WarAxe());
+PlayerOne.setWeapon(new Gauntlet.WeaponsCase.WarAxe());
 PlayerOne.generateClass();  // This will be used for "Surprise me" option
 console.log(PlayerOne.toString());
 
 var ComputerEnemy = new Gauntlet.Combatants.Orc();
 ComputerEnemy.generateClass();
-ComputerEnemy.setWeapon(new BroadSword());
+ComputerEnemy.setWeapon(new Gauntlet.WeaponsCase.BroadSword());
 console.log(ComputerEnemy.toString());
 
 /*
