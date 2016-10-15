@@ -18,6 +18,8 @@ var PlayerClass;
 // console.log("spell: ", spell.toString());
 
 
+$("#selected-player-weapon").hide();
+$("#selected-player-class").hide();
 $(document).ready(function() {
   /*
     Show the initial view that accepts player name
