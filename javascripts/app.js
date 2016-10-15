@@ -2,20 +2,20 @@
   Test code to generate a human player and an orc player
  */
 var PlayerOne = new Gauntlet.Combatants.Human();
-PlayerOne.setWeapon(new Gauntlet.WeaponsCase.WarAxe());
-PlayerOne.generateClass();  // This will be used for "Surprise me" option
-console.log(PlayerOne.toString());
+var PlayerClass;
+// PlayerOne.setWeapon(new Gauntlet.WeaponsCase.WarAxe());
+// PlayerOne.generateClass();  // This will be used for "Surprise me" option
 
-var ComputerEnemy = new Gauntlet.Combatants.Orc();
-ComputerEnemy.generateClass();
-ComputerEnemy.setWeapon(new Gauntlet.WeaponsCase.BroadSword());
-console.log(ComputerEnemy.toString());
+// var ComputerEnemy = new Gauntlet.Combatants.Orc();
+// ComputerEnemy.generateClass();
+// ComputerEnemy.setWeapon(new Gauntlet.WeaponsCase.BroadSword());
+// console.log(ComputerEnemy.toString());
 
 /*
   Test code to generate a spell
  */
-var spell = new Gauntlet.SpellBook.Sphere();
-console.log("spell: ", spell.toString());
+// var spell = new Gauntlet.SpellBook.Sphere();
+// console.log("spell: ", spell.toString());
 
 
 $(document).ready(function() {
@@ -55,11 +55,17 @@ $(document).ready(function() {
     Placeholder to show player selected weapons/class
    */
   $(".class-select").click(function(e) {
-    console.log($(this).closest("div").prop("id"));
+    $("#selected-player-class").val($(this).closest("div").prop("id"));
+    PlayerClass = $(this).closest("div").prop("id");
   })
 
   $(".weapon-select").click(function(e) {
-    console.log($(this).closest("div").prop("id"));
+    $("#weapon-player-class").html($(this).closest("div").prop("id"));
+  })
+
+  $("#select-weapon").click(function(e) {
+    PlayerOne.setClass(PlayerClass);
+    alert(PlayerClass);
   })
   /*
     Hide attack button until player is ready to defeat its enemy
