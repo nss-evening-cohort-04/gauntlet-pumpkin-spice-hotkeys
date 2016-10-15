@@ -5,10 +5,14 @@ var PlayerOne = new Gauntlet.Combatants.Human();
 PlayerOne.setWeapon(new WarAxe());
 PlayerOne.generateClass();  // This will be used for "Surprise me" option
 console.log(PlayerOne.toString());
+
+
+
 var ComputerEnemy = new Gauntlet.Combatants.Orc();
 ComputerEnemy.generateClass();
 ComputerEnemy.setWeapon(new BroadSword());
 console.log(ComputerEnemy.toString());
+
 /*
   Test code to generate a spell
  */
@@ -51,20 +55,25 @@ $(document).ready(function() {
   $(".class-select").click(function(e) {
     console.log($(this).closest("div").prop("id"));
   })
+
   $(".weapon-select").click(function(e) {
     console.log($(this).closest("div").prop("id"));
   })
   /*
     Hide attack button until player is ready to defeat its enemy
    */
+
     $("#Attack-button").hide();
     $("#Start-battle-button").click(function() {
       $("#Attack-button").show();
       $("#player-one-name").html(PlayerOne.playerName);
     });
+
  $("#Attack-button").click(function() {
     $("#player-one-name").html(PlayerOne.playerName);
  });
+
+
   /*
     When the back button clicked, move back a view
    */
