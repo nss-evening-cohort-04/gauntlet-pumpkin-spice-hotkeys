@@ -60,12 +60,17 @@ $(document).ready(function() {
   })
 
   $(".weapon-select").click(function(e) {
-    $("#weapon-player-class").html($(this).closest("div").prop("id"));
+    $("#selected-player-weapon").val($(this).closest("div").prop("id"));
+    PlayerWeapon = $(this).closest("div").prop("id");
   })
 
   $("#select-weapon").click(function(e) {
     PlayerOne.setClass(PlayerClass);
     alert(PlayerClass);
+  })
+  $("#Start-battle-button").click(function(e) {
+    PlayerOne.setWeapon(PlayerWeapon);
+    alert(PlayerWeapon);
   })
   /*
     Hide attack button until player is ready to defeat its enemy
