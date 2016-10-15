@@ -1,4 +1,4 @@
-Gauntlet.Combatants.Orc = function() {
+Gauntlet.Combatants.ComputerEnemy = function() {
   this.health = this.health + 20;
   this.species = "Orc";
   this.allowedClasses = ["Warrior", "Berserker", "Shaman"];
@@ -16,5 +16,5 @@ Gauntlet.Combatants.Orc = function() {
   }
 };
 
-Gauntlet.Combatants.Orc.prototype = new Gauntlet.Combatants.Monster();
+Gauntlet.Combatants.ComputerEnemy.prototype = new Gauntlet.Combatants.Monster();
 
