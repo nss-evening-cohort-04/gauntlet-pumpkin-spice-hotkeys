@@ -4,7 +4,6 @@ var Gauntlet = (function(OldGauntlet) {
  */
 
 OldGauntlet.GuildHall = {};
-
 /*
   Base function for a player, or enemy, class (profession)
  */
@@ -19,7 +18,6 @@ OldGauntlet.GuildHall.PlayerClass = function() {
     return this.name;
   }
 };
-
 /*
     FIGHTER CLASSES
       - Warrior
@@ -64,8 +62,6 @@ OldGauntlet.GuildHall.Monk = function() {
   this.strengthBonus = this.strengthBonus + 40;
 };
 OldGauntlet.GuildHall.Monk.prototype = new OldGauntlet.GuildHall.Fighter();
-
-
 /*
     MAGICAL CLASSES
       - Shaman
@@ -116,8 +112,6 @@ OldGauntlet.GuildHall.Sorcerer = function() {
   this.intelligenceBonus = this.intelligenceBonus + 30;
 };
 OldGauntlet.GuildHall.Sorcerer.prototype = new OldGauntlet.GuildHall.Mage();
-
-
 /*
     STEALTH CLASSES
       - Thief
@@ -157,8 +151,6 @@ OldGauntlet.GuildHall.Assassin = function() {
   this.intelligenceBonus = this.intelligenceBonus + 30;
 };
 OldGauntlet.GuildHall.Sorcerer.prototype = new OldGauntlet.GuildHall.Stealth();
-
-
 
 return OldGauntlet;
 
