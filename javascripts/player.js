@@ -41,8 +41,19 @@ OldGauntlet.Combatants.Player = function(name) {
 };
 
 OldGauntlet.Combatants.Player.prototype.setWeapon = function(newWeapon) {
-  this.weapon = newWeapon;
+  if (newWeapon === "Class-Surprise-Me") {
+    this.weapon = PlayerOne.generateWeapon();
+  }
+  else {
+  this.weapon = new OldGauntlet.WeaponsCase[newWeapon]();
+  }
 }
+OldGauntlet.Combatants.Player.prototype.generateWeapon = function() {
+  var random = Math.round(Math.random() * (this.allowedWeapons.length - 1));
+  var randomWeapon = this.allowedWeapons[random];
+  this.weapon = new OldGauntlet.WeaponsCase[randomWeapon]();
+  return this.weapon;
+};
 
 OldGauntlet.Combatants.Player.prototype.setClass = function(newClass) {
   if (newClass === "Class-Surprise-Me") {
@@ -54,42 +65,19 @@ OldGauntlet.Combatants.Player.prototype.setClass = function(newClass) {
 }
 
 OldGauntlet.Combatants.Player.prototype.generateClass = function() {
-  // Get a random index from the allowed classes array
   var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
-  // Get the string at the index
   var randomClass = this.allowedClasses[random];
-  // Composes the corresponding player class into the player object
   this.class = new OldGauntlet.GuildHall[randomClass]();
-  // Add the health bonus
   this.health += this.class.healthBonus;
   return this.class;
 };
 
-/*
-  Define the base properties for a human in a
-  constructor function.
- */
-OldGauntlet.Combatants.Human = function() {
-  var randomSkin;
 
-  this.species = "Human";
-  this.intelligence = this.intelligence + 20;
-
-  this.skinColors.push("brown", "red", "white", "disease");
-  randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
-  this.skinColor = this.skinColors[randomSkin];
-
-  this.allowedClasses = ["Warrior", "Berserker", "Valkyrie", "Monk"];
-};
-OldGauntlet.Combatants.Human.prototype = new OldGauntlet.Combatants.Player();
-/*
-  Define the base properties for a monster in a
-  constructor function.
- */
 OldGauntlet.Combatants.Monster = function() {
   this.health = this.health - 30;
   this.intelligence = this.intelligence -20;
   this.strength = this.strength + 30;
+    this.allowedWeapons = ["Dagger", "WarAxe", "BroadSword"];
 };
 OldGauntlet.Combatants.Monster.prototype = new OldGauntlet.Combatants.Player();
 

@@ -17,8 +17,24 @@ OldGauntlet.Combatants.Orc = function() {
     return this.class;
   }
 };
-
 OldGauntlet.Combatants.Orc.prototype = new OldGauntlet.Combatants.Monster();
+
+
+OldGauntlet.Combatants.Human = function() {
+  var randomSkin;
+
+  this.species = "Human";
+  this.intelligence = this.intelligence + 20;
+
+  this.skinColors.push("brown", "red", "white", "disease");
+  randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
+  this.skinColor = this.skinColors[randomSkin];
+
+  this.allowedClasses = ["Warrior", "Berserker", "Valkyrie", "Monk"];
+  this.allowedWeapons = ["Dagger", "WarAxe", "BroadSword"];
+};
+OldGauntlet.Combatants.Human.prototype = new OldGauntlet.Combatants.Player();
+
 
 return OldGauntlet;
 
