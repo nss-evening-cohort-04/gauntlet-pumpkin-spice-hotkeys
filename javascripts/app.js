@@ -1,31 +1,32 @@
 /*
   Test code to generate a human player and an orc player
  */
-var PlayerOne = new Gauntlet.Combatants.Human();
-var PlayerClass;
+let PlayerOne;
+let PlayerClass;
+let PlayerWeapon;
+var ComputerEnemy;
+let GameOver = false;
+
 // PlayerOne.setWeapon(new Gauntlet.WeaponsCase.WarAxe());
 // PlayerOne.generateClass();  // This will be used for "Surprise me" option
-
-// var ComputerEnemy = new Gauntlet.Combatants.Orc();
-// ComputerEnemy.generateClass();
-// ComputerEnemy.setWeapon(new Gauntlet.WeaponsCase.BroadSword());
-// console.log(ComputerEnemy.toString());
-
 /*
   Test code to generate a spell
  */
 // var spell = new Gauntlet.SpellBook.Sphere();
 // console.log("spell: ", spell.toString());
 
-
 $("#selected-player-weapon").hide();
 $("#selected-player-class").hide();
 $(document).ready(function() {
   /*
-    Show the initial view that accepts player name
+    Show the initial view that creates a new player and sets the player name
    */
   $("#player-setup").show();
   $("#player-name-button").click(function(e) {
+    PlayerOne = new Gauntlet.Combatants.Human();
+    ComputerEnemy = new Gauntlet.Combatants.Orc();
+    ComputerEnemy.generateClass();
+    ComputerEnemy.setWeapon("Class-Surprise-Me");
     PlayerOne.playerName = $("#player-name").val();
   })
     /*
@@ -44,6 +45,9 @@ $(document).ready(function() {
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--battleground":
+        moveAlong = ($("#player-name").val() !== "");
+        break;
+      case "card--play-again":
         moveAlong = ($("#player-name").val() !== "");
         break;
     }
@@ -68,11 +72,9 @@ $(document).ready(function() {
 
   $("#select-weapon").click(function(e) {
     PlayerOne.setClass(PlayerClass);
-    alert(PlayerClass);
   })
   $("#Start-battle-button").click(function(e) {
     PlayerOne.setWeapon(PlayerWeapon);
-    alert(PlayerWeapon);
   })
   /*
     Hide attack button until player is ready to defeat its enemy
@@ -80,15 +82,63 @@ $(document).ready(function() {
 
     $("#Attack-button").hide();
     $("#Start-battle-button").click(function() {
-      $("#Attack-button").show();
+    //Player One//
       $("#player-one-name").html(PlayerOne.playerName);
+      $("#player-one-species").html(PlayerOne.species);
+      $("#player-one-class").html(PlayerOne.class.name);
+      $("#player-one-weapon").html("Weapon " + PlayerOne.weapon.name);
+      $("#player-one-health").html("Health " + PlayerOne.health);
+      $("#player-one-intelligence").html("Intelligence " + (PlayerOne.intelligence + PlayerOne.class.intelligenceBonus));
+      $("#player-one-strength").html("Strength " + PlayerOne.strength);
+    //Player Two//
+      $("#player-two-name").html("Computer Enemy");
+      $("#player-two-class").html(ComputerEnemy.class.name);
+      $("#player-two-species").html(ComputerEnemy.species);
+      $("#player-two-weapon").html("Weapon " + ComputerEnemy.weapon.name);
+      $("#player-two-health").html("Health " + ComputerEnemy.health);
+      $("#player-two-intelligence").html("Intelligence " + ComputerEnemy.intelligence);
+      $("#player-two-strength").html("Strength " + ComputerEnemy.strength);
+    //Show Attack Button//
+      $("#Attack-button").show();
+
     });
 
  $("#Attack-button").click(function() {
-    $("#player-one-name").html(PlayerOne.playerName);
+      PlayerOne.health = (PlayerOne.health - ComputerEnemy.weapon.damage);
+      if (PlayerOne.health - ComputerEnemy.weapon.damage <= 0) {
+              playerOneDied();
+      }
+      $("#player-one-health").html("Health " + (PlayerOne.health - ComputerEnemy.weapon.damage));
+    //Player Two//
+      ComputerEnemy.health = (ComputerEnemy.health - PlayerOne.weapon.damage);
+      if (ComputerEnemy.health - PlayerOne.weapon.damage <= 0) {
+              computerEnemyDied();
+      }
+      $("#player-two-health").html("Health " + (ComputerEnemy.health - PlayerOne.weapon.damage));
  });
 
 
+function  playerOneDied() {
+    alert("Hey player one died!");
+    $("#battleground").hide();
+    $("#play-again").show();
+    GameOver = true;
+}
+
+function  computerEnemyDied() {
+    alert("Computer enemy has died!");
+    $("#battleground").hide();
+    $("#play-again").show();
+    GameOver = true;
+}
+
+
+$("#play-again-button").click(function(e) {
+  $("#play-again").hide();
+  $("#battleground").hide();
+  $("#player-setup").show();
+  $("#player-name").focus();
+})
 
   /*
     When the back button clicked, move back a view
