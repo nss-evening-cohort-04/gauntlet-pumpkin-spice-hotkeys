@@ -12,6 +12,7 @@ OldGauntlet.Combatants.Player = function(name) {
   this.class = null;
   this.weapon = null;
   this.spell = null;
+  this.image = null;
 
   this.playerName = name || "unknown adventurer";
   this.health = Math.floor(Math.random() * 40 + 50);

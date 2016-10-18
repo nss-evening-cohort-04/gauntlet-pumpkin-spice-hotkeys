@@ -88,17 +88,15 @@ $(document).ready(function() {
     $("#Start-battle-button").click(function() {
       $("#game-audio").attr("src", "http://www.tannerhelland.com/dmusic/CyaronsGate.ogg");
     //Player One//
-      $("#player-one-name").html(PlayerOne.playerName);
-      $("#player-one-species").html(PlayerOne.species);
+      $("#player-one-image").attr("src",PlayerOne.class.image);
       $("#player-one-class").html(PlayerOne.class.name);
       $("#player-one-weapon").html("Weapon: " + PlayerOne.weapon.name);
       $("#player-one-health").html("Health: " + PlayerOne.health);
       $("#player-one-intelligence").html("Intelligence: " + (PlayerOne.intelligence + PlayerOne.class.intelligenceBonus));
       $("#player-one-strength").html("Strength: " + PlayerOne.strength);
     //Player Two//
-      $("#player-two-name").html("Computer Enemy");
+      $("#player-two-image").attr("src",ComputerEnemy.class.image);
       $("#player-two-class").html(ComputerEnemy.class.name);
-      $("#player-two-species").html(ComputerEnemy.species);
       $("#player-two-weapon").html("Weapon: " + ComputerEnemy.weapon.name);
       $("#player-two-health").html("Health: " + ComputerEnemy.health);
       $("#player-two-intelligence").html("Intelligence: " + ComputerEnemy.intelligence);
@@ -129,7 +127,7 @@ function  playerOneDied() {
     if (PlayerOneAlive === false && PlayerTwoAlive === false) {
       $("#winner-text").html("Both players have perished in the Gauntlet!")
     } else {
-      $("#winner-text").html("Player One has lost to the computer in the Gauntlet!")
+      $("#winner-text").html(PlayerOne.playerName + " has lost to the computer in the Gauntlet!")
     }
     $("#battleground").hide();
     $("#play-again").show();
@@ -137,7 +135,7 @@ function  playerOneDied() {
 }
 
 function  computerEnemyDied() {
-    $("#winner-text").html("Player One has escaped the Gauntlet in victory!!!")
+    $("#winner-text").html(PlayerOne.playerName + " has escaped the Gauntlet in victory!!!")
     $("#battleground").hide();
     $("#play-again").show();
     GameOver = true;

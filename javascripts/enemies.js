@@ -46,8 +46,8 @@ OldGauntlet.Combatants.Dwarf = function() {
   randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
   this.skinColor = this.skinColors[randomSkin];
 
-  this.allowedClasses = ["Warrior", "Berserker","Sorcerer","Wizard"];
-  this.allowedWeapons = ["Dagger", "WarAxe", "BroadSword","Bubbles"];
+  this.allowedClasses = ["Warrior", "Berserker","Sorcerer","Wizard","Ninja"];
+  this.allowedWeapons = ["Dagger", "WarAxe", "BroadSword","Bubbles","ThrowingStars"];
 };
 OldGauntlet.Combatants.Dwarf.prototype = new OldGauntlet.Combatants.Player();
 
