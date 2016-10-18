@@ -16,12 +16,18 @@ body {
   min-width: 500px;
 }
 
+#player-one-image,
+#player-two-image {
+  width: 40%;
+  height: 10em;
+}
+
 
 
 /*
   Section styles
  */
-.card { 
+.card {
   display: none;
 }
 
