@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <title>Gauntlet</title>
-      <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+     <link href="https://fonts.googleapis.com/css?family=Amarante|Bangers|MedievalSharp|Piedra|Pirata+One|Rye" rel="stylesheet">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="styles/gauntlet.css">
    </head>
@@ -11,7 +11,7 @@
       <article id="game-container">
          <section id="player-setup" class="card card--name">
             <div class="card__prompt">
-               <div>RECORD YOUR NAME, ADVENTURER</div>
+               <div>RECORD YOUR NAME <br/>ADVENTURER</div>
                <div class="field">
                   <input type="text" autofocus="true" val="PlayerOne" id="player-name" class="field__textinput">
                </div>
@@ -144,19 +144,20 @@
                   <div class="col-sm-4">
                      <div class="card__button weapon-select" id="Dagger">
                         <a class="class__link btn btn--big btn--blue" href="#">
-                        <span class="btn__prompt">></span>
+                        <span class="btn__prompt"></span>
                         <span class="btn__text">Dagger</span>
                         </a>
                      </div>
                      <div class="card__button weapon-select" id="BroadSword">
                         <a class="class__link btn btn--big btn--blue" href="#">
-                        <span class="btn__prompt">></span>
+                        <span class="btn__prompt"></span>
                         <span class="btn__text">Broad Sword</span>
+                     
                         </a>
                      </div>
                      <div class="card__button weapon-select" id="WarAxe">
                         <a class="class__link btn btn--big btn--blue" href="#">
-                        <span class="btn__prompt">></span>
+                        <span class="btn__prompt"></span>
                         <span class="btn__text">War Axe</span>
                         </a>
                      </div>
@@ -164,19 +165,19 @@
                   <div class="col-sm-4">
                      <div class="card__button weapon-select" id="Spear">
                         <a class="class__link btn btn--big btn--blue" href="#">
-                        <span class="btn__prompt">></span>
+                        <span class="btn__prompt"></span>
                         <span class="btn__text">Spear</span>
                         </a>
                      </div>
                      <div class="card__button weapon-select" id="Bubbles">
                         <a class="class__link btn btn--big btn--blue" href="#">
-                        <span class="btn__prompt">></span>
+                        <span class="btn__prompt"></span>
                         <span class="btn__text">Bubbles</span>
                         </a>
                      </div>
                     <div class="card__button weapon-select" id="Class-Surprise-Me">
                         <a class="class__link btn btn--big btn--yellow" href="#">
-                        <span class="btn__prompt">></span>
+                        <span class="btn__prompt"></span>
                         <span class="btn__text">surprise me</span>
                         </a>
                      </div>
@@ -184,20 +185,20 @@
                   <div class="col-sm-4">
                      <div class="card__button weapon-select" id="BowAndArrow">
                         <a class="class__link btn btn--big btn--blue" href="#">
-                        <span class="btn__prompt">></span>
+                        <span class="btn__prompt"></span>
                         <span class="btn__text">Bow And Arrow</span>
                         </a>
                      </div>
                      <div class="card__button weapon-select" id="BrassKnuckles">
                         <a class="class__link btn btn--big btn--blue" href="#">
-                        <span class="btn__prompt">></span>
+                        <span class="btn__prompt"></span>
                         <span class="btn__text">Brass Knuckles</span>
                         </a>
                      </div>
                      <div class="card__button weapon-select" id="ThrowingStars">
                         <a class="class__link btn btn--big btn--blue" href="#">
-                        <span class="btn__prompt">></span>
-                        <span class="btn__text">ThrowingStars</span>
+                        <span class="btn__prompt"></span>
+                        <span class="btn__text btn__text custom">ThrowingStars</span>
                         </a>
                      </div>
                   </div>
@@ -216,6 +217,24 @@
          <section id="battleground" class="card card--battleground">
             <div class="card__prompt">
                <div>FIGHT!</div>
+            </div>
+            <div class="col-md-6">
+               <div id="player-one-name"></div>
+               <div id="player-one-species"></div>
+               <div id="player-one-class"></div>
+               <div id="player-one-weapon"></div>
+               <div id="player-one-health"></div>
+               <div id="player-one-intelligence"></div>
+               <div id="player-one-strength"></div>
+            </div>
+            <div class="col-md-6">
+               <div id="player-two-name"></div>
+               <div id="player-two-species"></div>
+               <div id="player-two-class"></div>
+               <div id="player-two-weapon"></div>
+               <div id="player-two-health"></div>
+               <div id="player-two-intelligence"></div>
+               <div id="player-two-strength"></div>
             </div>
             <div class="col-md-6">
                <img id="player-one-image" src="">
@@ -256,10 +275,52 @@
                   next="card--battleground">
                <span class="btn__prompt">></span>
                <span class="btn__text">Play again!</span>
-               </a>
-            </div>
-         </section>
-      </article>
+               <section>
+      <div class=" ray">
+    <div class="yellow"></div>
+    <div class="shadow"></div>
+</div>
+<div class="kinto centered">    
+   <ul>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+  </ul>
+</div>
+<div class="cloud cloud1">    
+   <ul>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+  </ul>
+</div>
+<div class="cloud cloud2">    
+   <ul>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+  </ul>
+</div>
+
+<div class="cloud cloud3">    
+   <ul>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+  </ul>
+</div>
+
+<div class="line line1"></div>
+<div class="line line2"></div>
+<div class="line line3"></div>
+<div class="line line4"></div>
+<div class="line line5"></div>
+ </section>
+             
       <audio id="game-audio" autoplay="true" src="http://www.tannerhelland.com/dmusic/Home.mp3">
       <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
       <script src="javascripts/weapons.js"></script>
