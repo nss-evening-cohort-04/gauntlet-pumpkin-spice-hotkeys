@@ -109,14 +109,12 @@ $(document).ready(function() {
  $("#Attack-button").click(function() {
       PlayerOne.health = (PlayerOne.health - ComputerEnemy.weapon.damage);
       if (PlayerOne.health - ComputerEnemy.weapon.damage <= 0) {
-              PlayerOneAlive = false;
               playerOneDied();
       }
       $("#player-one-health").html("Health " + (PlayerOne.health - ComputerEnemy.weapon.damage));
     //Player Two//
       ComputerEnemy.health = (ComputerEnemy.health - PlayerOne.weapon.damage);
       if (ComputerEnemy.health - PlayerOne.weapon.damage <= 0) {
-              PlayerTwoAlive = false;
               computerEnemyDied();
       }
       $("#player-two-health").html("Health " + (ComputerEnemy.health - PlayerOne.weapon.damage));
@@ -124,11 +122,7 @@ $(document).ready(function() {
 
 
 function  playerOneDied() {
-    if (PlayerOneAlive === false && PlayerTwoAlive === false) {
-      $("#winner-text").html("Both players have perished in the Gauntlet!")
-    } else {
-      $("#winner-text").html(PlayerOne.playerName + " has lost to the computer in the Gauntlet!")
-    }
+    $("#winner-text").html(PlayerOne.playerName + " has lost to the computer in the Gauntlet!")
     $("#battleground").hide();
     $("#play-again").show();
     GameOver = true;
@@ -146,6 +140,7 @@ $("#play-again-button").click(function(e) {
   $("#play-again").hide();
   $("#battleground").hide();
   $("#player-setup").show();
+  $("#game-audio").attr("src", "http://www.tannerhelland.com/dmusic/Home.mp3");
   $("#player-name").focus();
 })
 
