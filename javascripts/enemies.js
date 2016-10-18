@@ -36,6 +36,21 @@ OldGauntlet.Combatants.Human = function() {
 OldGauntlet.Combatants.Human.prototype = new OldGauntlet.Combatants.Player();
 
 
+OldGauntlet.Combatants.Dwarf = function() {
+  var randomSkin;
+
+  this.species = "Dwarf";
+  this.strength = this.strength + 20
+
+  this.skinColors.push("brown", "red", "white", "disease");
+  randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
+  this.skinColor = this.skinColors[randomSkin];
+
+  this.allowedClasses = ["Warrior", "Berserker","Sorcerer","Wizard"];
+  this.allowedWeapons = ["Dagger", "WarAxe", "BroadSword","Bubbles"];
+};
+OldGauntlet.Combatants.Dwarf.prototype = new OldGauntlet.Combatants.Player();
+
 return OldGauntlet;
 
 })(Gauntlet || {});

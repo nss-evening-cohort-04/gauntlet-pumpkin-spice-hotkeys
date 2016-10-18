@@ -2,8 +2,8 @@ var Gauntlet = (function(OldGauntlet) {
 /*
   TODO: Modularize this code with IIFE or Browserify
  */
-OldGauntlet.SpellBook = {};
 
+OldGauntlet.SpellBook = {};
 
 /*
   Base spell function that defines name, damage, damage type
