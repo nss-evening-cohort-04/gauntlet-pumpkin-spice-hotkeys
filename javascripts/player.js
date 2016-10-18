@@ -11,6 +11,7 @@ OldGauntlet.Combatants.Player = function(name) {
   this.species = null;
   this.class = null;
   this.weapon = null;
+  this.spell = null;
 
   this.playerName = name || "unknown adventurer";
   this.health = Math.floor(Math.random() * 40 + 50);
@@ -41,7 +42,7 @@ OldGauntlet.Combatants.Player = function(name) {
 };
 
 OldGauntlet.Combatants.Player.prototype.setWeapon = function(newWeapon) {
-  if (newWeapon === "Class-Surprise-Me") {
+  if (newWeapon === "Class-Surprise-Me" || newWeapon === undefined) {
     this.weapon = PlayerOne.generateWeapon();
   }
   else {
@@ -56,7 +57,7 @@ OldGauntlet.Combatants.Player.prototype.generateWeapon = function() {
 };
 
 OldGauntlet.Combatants.Player.prototype.setClass = function(newClass) {
-  if (newClass === "Class-Surprise-Me") {
+  if (newClass === "Class-Surprise-Me" || newClass === undefined) {
     this.class = PlayerOne.generateClass();
   }
   else {

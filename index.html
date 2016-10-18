@@ -84,14 +84,20 @@
                         <span class="btn__text">Sorcerer</span>
                         </a>
                      </div>
+                     <div class="card__button class-select" id="Class-Surprise-Me">
+                        <a class="class__link btn btn--big btn--yellow" href="#">
+                        <span class="btn__prompt">></span>
+                        <span class="btn__text">surprise me</span>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-sm-4">
                      <div class="card__button class-select" id="Conjurer">
                         <a class="class__link btn btn--big btn--blue" href="#">
                         <span class="btn__prompt">></span>
                         <span class="btn__text">Conjurer</span>
                         </a>
                      </div>
-                  </div>
-                  <div class="col-sm-4">
                      <div class="card__button class-select" id="Thief">
                         <a class="class__link btn btn--big btn--blue" href="#">
                         <span class="btn__prompt">></span>
@@ -108,12 +114,6 @@
                         <a class="class__link btn btn--big btn--blue" href="#">
                         <span class="btn__prompt">></span>
                         <span class="btn__text">Assassin</span>
-                        </a>
-                     </div>
-                     <div class="card__button class-select" id="Class-Surprise-Me">
-                        <a class="class__link btn btn--big btn--yellow" href="#">
-                        <span class="btn__prompt">></span>
-                        <span class="btn__text">surprise me</span>
                         </a>
                      </div>
                   </div>
@@ -141,33 +141,66 @@
                   </a>
                </div>
             </div>
-            <div class="col-sm-12">
-            <div class="card__button weapon-select" id="Dagger">
-               <a class="class__link btn btn--big btn--blue" href="#">
-               <span class="btn__prompt">></span>
-               <span class="btn__text">Dagger</span>
-               </a>
-            </div>
-            <div class="col-sm-12">
-            <div class="card__button weapon-select" id="BroadSword">
-               <a class="class__link btn btn--big btn--blue" href="#">
-               <span class="btn__prompt">></span>
-               <span class="btn__text">Broad Sword</span>
-               </a>
-            </div>
-            <div class="col-sm-12">
-            <div class="card__button weapon-select" id="WarAxe">
-               <a class="class__link btn btn--big btn--blue" href="#">
-               <span class="btn__prompt">></span>
-               <span class="btn__text">War Axe</span>
-               </a>
-            </div>
-            <div class="col-sm-12">
-               <div class="card__button weapon-select" id="Class-Surprise-Me">
-                  <a class="class__link btn btn--big btn--yellow" href="#">
-                  <span class="btn__prompt">></span>
-                  <span class="btn__text">Surprise Me!</span>
-                  </a>
+                  <div class="col-sm-4">
+                     <div class="card__button weapon-select" id="Dagger">
+                        <a class="class__link btn btn--big btn--blue" href="#">
+                        <span class="btn__prompt">></span>
+                        <span class="btn__text">Dagger</span>
+                        </a>
+                     </div>
+                     <div class="card__button weapon-select" id="BroadSword">
+                        <a class="class__link btn btn--big btn--blue" href="#">
+                        <span class="btn__prompt">></span>
+                        <span class="btn__text">Broad Sword</span>
+                        </a>
+                     </div>
+                     <div class="card__button weapon-select" id="WarAxe">
+                        <a class="class__link btn btn--big btn--blue" href="#">
+                        <span class="btn__prompt">></span>
+                        <span class="btn__text">War Axe</span>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-sm-4">
+                     <div class="card__button weapon-select" id="Spear">
+                        <a class="class__link btn btn--big btn--blue" href="#">
+                        <span class="btn__prompt">></span>
+                        <span class="btn__text">Spear</span>
+                        </a>
+                     </div>
+                     <div class="card__button weapon-select" id="Bubbles">
+                        <a class="class__link btn btn--big btn--blue" href="#">
+                        <span class="btn__prompt">></span>
+                        <span class="btn__text">Bubbles</span>
+                        </a>
+                     </div>
+                    <div class="card__button weapon-select" id="Class-Surprise-Me">
+                        <a class="class__link btn btn--big btn--yellow" href="#">
+                        <span class="btn__prompt">></span>
+                        <span class="btn__text">surprise me</span>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-sm-4">
+                     <div class="card__button weapon-select" id="BowAndArrow">
+                        <a class="class__link btn btn--big btn--blue" href="#">
+                        <span class="btn__prompt">></span>
+                        <span class="btn__text">Bow And Arrow</span>
+                        </a>
+                     </div>
+                     <div class="card__button weapon-select" id="BrassKnuckles">
+                        <a class="class__link btn btn--big btn--blue" href="#">
+                        <span class="btn__prompt">></span>
+                        <span class="btn__text">Brass Knuckles</span>
+                        </a>
+                     </div>
+                     <div class="card__button weapon-select" id="ThrowingStars">
+                        <a class="class__link btn btn--big btn--blue" href="#">
+                        <span class="btn__prompt">></span>
+                        <span class="btn__text">ThrowingStars</span>
+                        </a>
+                     </div>
+                  </div>
                </div>
                <div><input id="selected-player-weapon" type="text" name="" value="Class-Suprise-Me" placeholder=""></div>
             </div>
@@ -214,6 +247,7 @@
          <section id="play-again" class="card card--playagain">
             <div class="card__prompt">
                <div>Game Over!</div>
+               <div id="winner-text"></div>
             </div>
             <div class="card__button" id="play-again-button">
                <a class="card__link btn btn--big btn--orange"
@@ -225,7 +259,7 @@
             </div>
          </section>
       </article>
-
+      <audio id="game-audio" autoplay="true" src="http://www.vorbis.com/music/Epoq-Lepidoptera.ogg">
       <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
       <script src="javascripts/weapons.js"></script>
       <script src="javascripts/classes.js"></script>

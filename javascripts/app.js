@@ -4,9 +4,10 @@
 let PlayerOne;
 let PlayerClass;
 let PlayerWeapon;
-var ComputerEnemy;
+let ComputerEnemy;
 let GameOver = false;
-
+let PlayerOneAlive = true;
+let PlayerTwoAlive = true;
 // PlayerOne.setWeapon(new Gauntlet.WeaponsCase.WarAxe());
 // PlayerOne.generateClass();  // This will be used for "Surprise me" option
 /*
@@ -24,7 +25,10 @@ $(document).ready(function() {
   $("#player-setup").show();
   $("#player-name-button").click(function(e) {
     PlayerOne = new Gauntlet.Combatants.Human();
-    ComputerEnemy = new Gauntlet.Combatants.Orc();
+    var combatantType = ["Human", "Orc", "Dwarf"];
+    var random = Math.round(Math.random() * (combatantType.length-1));
+    var randomCombatant = combatantType[random];
+    ComputerEnemy = new Gauntlet.Combatants[randomCombatant]();
     ComputerEnemy.generateClass();
     ComputerEnemy.setWeapon("Class-Surprise-Me");
     PlayerOne.playerName = $("#player-name").val();
@@ -82,6 +86,7 @@ $(document).ready(function() {
 
     $("#Attack-button").hide();
     $("#Start-battle-button").click(function() {
+      $("#game-audio").attr("src", "http://www.tannerhelland.com/dmusic/CyaronsGate.ogg");
     //Player One//
       $("#player-one-name").html(PlayerOne.playerName);
       $("#player-one-species").html(PlayerOne.species);
@@ -106,12 +111,14 @@ $(document).ready(function() {
  $("#Attack-button").click(function() {
       PlayerOne.health = (PlayerOne.health - ComputerEnemy.weapon.damage);
       if (PlayerOne.health - ComputerEnemy.weapon.damage <= 0) {
+              PlayerOneAlive = false;
               playerOneDied();
       }
       $("#player-one-health").html("Health " + (PlayerOne.health - ComputerEnemy.weapon.damage));
     //Player Two//
       ComputerEnemy.health = (ComputerEnemy.health - PlayerOne.weapon.damage);
       if (ComputerEnemy.health - PlayerOne.weapon.damage <= 0) {
+              PlayerTwoAlive = false;
               computerEnemyDied();
       }
       $("#player-two-health").html("Health " + (ComputerEnemy.health - PlayerOne.weapon.damage));
@@ -119,14 +126,18 @@ $(document).ready(function() {
 
 
 function  playerOneDied() {
-    alert("Hey player one died!");
+    if (PlayerOneAlive === false && PlayerTwoAlive === false) {
+      $("#winner-text").html("Both players have perished in the Gauntlet!")
+    } else {
+      $("#winner-text").html("Player One has lost to the computer in the Gauntlet!")
+    }
     $("#battleground").hide();
     $("#play-again").show();
     GameOver = true;
 }
 
 function  computerEnemyDied() {
-    alert("Computer enemy has died!");
+    $("#winner-text").html("Player One has escaped the Gauntlet in victory!!!")
     $("#battleground").hide();
     $("#play-again").show();
     GameOver = true;

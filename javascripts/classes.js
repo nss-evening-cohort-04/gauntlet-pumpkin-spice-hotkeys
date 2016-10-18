@@ -108,7 +108,7 @@ OldGauntlet.GuildHall.Stealth = function() {
   this.strengthBonus = this.strengthBonus - 20;
   this.intelligenceBonus = this.intelligenceBonus + 44;
 };
-OldGauntlet.GuildHall.Mage.prototype = new OldGauntlet.GuildHall.PlayerClass();
+OldGauntlet.GuildHall.Stealth.prototype = new OldGauntlet.GuildHall.PlayerClass();
 
 
 
