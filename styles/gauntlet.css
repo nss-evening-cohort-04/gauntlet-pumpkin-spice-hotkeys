@@ -47,7 +47,8 @@ input[type="color"]:focus,
   height: 10em;
 }
 
-#battleground {
+#battleground,
+{
   background: white;
 }
 
