@@ -125,6 +125,7 @@ function  playerOneDied() {
     $("#winner-text").html(PlayerOne.playerName + " has lost to the computer in the Gauntlet!")
     $("#battleground").hide();
     $("#play-again").show();
+    $("#game-audio").attr("src", "http://www.tannerhelland.com/dmusic/Nevermore.mp3");
     GameOver = true;
 }
 
@@ -132,6 +133,7 @@ function  computerEnemyDied() {
     $("#winner-text").html(PlayerOne.playerName + " has escaped the Gauntlet in victory!!!")
     $("#battleground").hide();
     $("#play-again").show();
+    $("#game-audio").attr("src", "http://www.tannerhelland.com/dmusic/HiddenTears.mp3");
     GameOver = true;
 }
 
