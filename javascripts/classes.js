@@ -134,7 +134,7 @@ OldGauntlet.GuildHall.Thief.prototype = new OldGauntlet.GuildHall.Stealth();
 
 OldGauntlet.GuildHall.Ninja = function() {
   this.name = "Ninja";
-  this.image = "/images/ninja.jpg"
+  this.image = "/images/ninja.png"
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 10;
 };
