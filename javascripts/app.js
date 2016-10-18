@@ -91,18 +91,18 @@ $(document).ready(function() {
       $("#player-one-name").html(PlayerOne.playerName);
       $("#player-one-species").html(PlayerOne.species);
       $("#player-one-class").html(PlayerOne.class.name);
-      $("#player-one-weapon").html("Weapon " + PlayerOne.weapon.name);
-      $("#player-one-health").html("Health " + PlayerOne.health);
-      $("#player-one-intelligence").html("Intelligence " + (PlayerOne.intelligence + PlayerOne.class.intelligenceBonus));
-      $("#player-one-strength").html("Strength " + PlayerOne.strength);
+      $("#player-one-weapon").html("Weapon: " + PlayerOne.weapon.name);
+      $("#player-one-health").html("Health: " + PlayerOne.health);
+      $("#player-one-intelligence").html("Intelligence: " + (PlayerOne.intelligence + PlayerOne.class.intelligenceBonus));
+      $("#player-one-strength").html("Strength: " + PlayerOne.strength);
     //Player Two//
       $("#player-two-name").html("Computer Enemy");
       $("#player-two-class").html(ComputerEnemy.class.name);
       $("#player-two-species").html(ComputerEnemy.species);
-      $("#player-two-weapon").html("Weapon " + ComputerEnemy.weapon.name);
-      $("#player-two-health").html("Health " + ComputerEnemy.health);
-      $("#player-two-intelligence").html("Intelligence " + ComputerEnemy.intelligence);
-      $("#player-two-strength").html("Strength " + ComputerEnemy.strength);
+      $("#player-two-weapon").html("Weapon: " + ComputerEnemy.weapon.name);
+      $("#player-two-health").html("Health: " + ComputerEnemy.health);
+      $("#player-two-intelligence").html("Intelligence: " + ComputerEnemy.intelligence);
+      $("#player-two-strength").html("Strength: " + ComputerEnemy.strength);
     //Show Attack Button//
       $("#Attack-button").show();
 
