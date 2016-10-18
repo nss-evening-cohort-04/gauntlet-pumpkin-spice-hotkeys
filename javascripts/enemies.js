@@ -29,7 +29,6 @@ OldGauntlet.Combatants.Human = function() {
   this.skinColors.push("brown", "red", "white", "disease");
   randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
   this.skinColor = this.skinColors[randomSkin];
-
   this.allowedClasses = ["Warrior", "Berserker", "Valkyrie", "Monk"];
   this.allowedWeapons = ["Dagger", "WarAxe", "BroadSword"];
 };
